@@ -1,4 +1,4 @@
-= zwiebeluch - onion architecture
+= Spring Data JDBC with Domain Driven Design and Test Driven Development
 
 === Wichtig
 
