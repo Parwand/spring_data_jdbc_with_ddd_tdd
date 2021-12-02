@@ -1,0 +1,14 @@
+@startuml
+ [Controller] <<..controller..>>
+ [Service] <<..applicationService..>>
+ [db] <<..infrastructure..>>
+ [CrudRepository] <<..infrastructure..>>
+ [domain] <<..domain..>>
+
+ [Controller] --> [Service]
+ [db] --> [Service]
+ [Service] --> [domain]
+ [Controller] --> [domain]
+ [db] --> [CrudRepository]
+
+@enduml
