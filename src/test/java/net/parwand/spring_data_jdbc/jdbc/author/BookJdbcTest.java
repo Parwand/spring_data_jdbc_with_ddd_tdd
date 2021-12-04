@@ -2,6 +2,7 @@ package net.parwand.spring_data_jdbc.jdbc.author;
 
 import net.parwand.spring_data_jdbc.domain.model.author.Author;
 import net.parwand.spring_data_jdbc.domain.model.book.Book;
+import net.parwand.spring_data_jdbc.infrastructure.db.AuthorCrudRepository;
 import net.parwand.spring_data_jdbc.infrastructure.db.AuthorRepositoryImp;
 import net.parwand.spring_data_jdbc.infrastructure.db.BookCrudRepository;
 import org.junit.jupiter.api.DisplayName;
@@ -23,7 +24,7 @@ public class BookJdbcTest {
     @Autowired
     private BookCrudRepository bookRepository;
     @Autowired
-    private AuthorRepositoryImp authorRepository;
+    private AuthorCrudRepository authorRepository;
 
 
     @Test
