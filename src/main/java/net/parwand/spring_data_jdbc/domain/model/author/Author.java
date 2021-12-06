@@ -8,10 +8,8 @@ import java.util.Objects;
  * @Author PAR ALS
  * //TODO @MANY_TO_MANY (AUTHOR -n-----m- BOOK) , we need here three tables (author, book, & author_book to reference)
  */
-@Table("AUTHOR")
 public class Author {
 
-    @Id
     private Long id;
     private String name;
 

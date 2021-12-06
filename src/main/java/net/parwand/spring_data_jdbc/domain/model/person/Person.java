@@ -10,9 +10,7 @@ import java.util.Objects;
  * //TODO @ONE_TO_ONE (PERSON -1-----1- ADDRESS)
  * // Person must have no address ==> save personID in Address table
  */
-@Table("PERSON")
 public class Person {
-    @Id
     private Long id;
     private String name;
     private Address address;

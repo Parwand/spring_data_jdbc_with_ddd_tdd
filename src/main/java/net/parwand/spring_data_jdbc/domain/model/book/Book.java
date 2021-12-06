@@ -14,9 +14,7 @@ import java.util.Set;
  * @Author PAR ALS
  * //TODO @MANY_TO_MANY (AUTHOR -n-----m- BOOK)
  */
-@Table("BOOK")
 public class Book {
-    @Id
     private Long id;
 
     private String title;

@@ -8,9 +8,8 @@ import java.time.LocalDate;
 /**
  * @TODO NO_RELATION
  */
-@Table("PETS")
 public class Pet {
-    @Id
+
     private Long id;
     private String name;
     private LocalDate birthDate;
