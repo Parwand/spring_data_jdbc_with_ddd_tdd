@@ -2,6 +2,7 @@ package net.parwand.spring_data_jdbc.jdbc.pet;
 
 import net.parwand.spring_data_jdbc.domain.model.pet.Pet;
 import net.parwand.spring_data_jdbc.infrastructure.db.PetRepositoryImpl;
+import net.parwand.spring_data_jdbc.infrastructure.dto.PetEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

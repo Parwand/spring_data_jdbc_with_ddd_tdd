@@ -12,6 +12,12 @@ public class PersonEntity {
     private String name;
     private Address address;
 
+    public PersonEntity(Long id, String name, Address address) {
+        this.id = id;
+        this.name = name;
+        this.address = address;
+    }
+
     public Long getId() {
         return id;
     }

@@ -3,7 +3,7 @@ package net.parwand.spring_data_jdbc.infrastructure.dto;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Table;
 
-@Table("Author")
+@Table("AUTHOR")
 public class AuthorEntity {
     @Id
     private Long id;

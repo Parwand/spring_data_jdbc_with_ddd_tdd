@@ -6,5 +6,5 @@ public interface AuthorRepository{
 
     Author findAuthorById(Long id);
 
-    void save(Author author1);
+    void save(Author author);
 }

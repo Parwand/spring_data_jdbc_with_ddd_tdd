@@ -18,8 +18,8 @@ public class Author {
         this.name = name;
     }
 
-    public static Author create(String name){
-        return new Author(null, name);
+    public static Author create(Long id, String name){
+        return new Author(id, name);
     }
 
     public Long getId() {

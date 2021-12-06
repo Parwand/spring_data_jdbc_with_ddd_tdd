@@ -21,8 +21,8 @@ CREATE TABLE address(
     street VARCHAR(250),
     plz BIGINT,
     country VARCHAR(250),
-    person BIGINT,
-    CONSTRAINT id_foreign_key FOREIGN KEY (person) REFERENCES person(id)
+    person_entity BIGINT,
+    CONSTRAINT id_foreign_key FOREIGN KEY (person_entity) REFERENCES person(id)
                                   ON DELETE CASCADE
                                   ON UPDATE CASCADE
 );
@@ -41,6 +41,6 @@ CREATE TABLE book(
 
 CREATE TABLE author_book(
     author BIGINT,
-    book BIGINT,
-    CONSTRAINT pk_author_book PRIMARY KEY (author, book)
+    book_entity BIGINT,
+    CONSTRAINT pk_author_book PRIMARY KEY (author, book_entity)
 );

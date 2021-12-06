@@ -12,21 +12,25 @@ import java.util.Objects;
  */
 public class Person {
     private Long id;
+
     private String name;
     private Address address;
-
     private Person(Long id, String name, Address address) {
         this.id = id;
         this.name = name;
         this.address = address;
     }
 
-    public static Person create(String name, Address address){
-        return new Person(null, name, address);
+    public static Person create(Long id, String name, Address address){
+        return new Person(id, name, address);
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public void setName(String name) {

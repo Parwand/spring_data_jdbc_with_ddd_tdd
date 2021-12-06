@@ -1,10 +1,7 @@
 package net.parwand.spring_data_jdbc.domain.model.book;
 
 import net.parwand.spring_data_jdbc.domain.model.author.Author;
-import net.parwand.spring_data_jdbc.domain.model.author.AuthorRef;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.relational.core.mapping.MappedCollection;
-import org.springframework.data.relational.core.mapping.Table;
+import net.parwand.spring_data_jdbc.infrastructure.dto.AuthorRefEntity;
 
 import java.util.HashSet;
 import java.util.Objects;
@@ -22,7 +19,7 @@ public class Book {
     private String text;
 
 
-    private Set<AuthorRef> authors = new HashSet<>();
+    private Set<AuthorRefEntity> authors = new HashSet<>();
 
     private Book(Long id, String title, String isbn, String text) {
         this.id = id;
@@ -31,15 +28,47 @@ public class Book {
         this.text = text;
     }
 
-    public static Book create(String title, String isbn, String text) {
-        return  new Book(null, title, isbn, text);
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getIsbn() {
+        return isbn;
+    }
+
+    public void setIsbn(String isbn) {
+        this.isbn = isbn;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public void setAuthors(Set<AuthorRefEntity> authors) {
+        this.authors = authors;
+    }
+
+    public static Book create(Long id, String title, String isbn, String text) {
+        return  new Book(id, title, isbn, text);
     }
 
     public void addAuthors(Author author) {
-        this.authors.add(new AuthorRef(author.getId()));
+        this.authors.add(new AuthorRefEntity(author.getId()));
     }
 
-    public Set<AuthorRef> getAuthors() {
+    public Set<AuthorRefEntity> getAuthors() {
         return authors;
     }
 

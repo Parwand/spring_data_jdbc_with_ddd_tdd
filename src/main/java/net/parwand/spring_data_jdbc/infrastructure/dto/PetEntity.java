@@ -5,7 +5,7 @@ import org.springframework.data.relational.core.mapping.Table;
 
 import java.time.LocalDate;
 
-@Table("PET")
+@Table("PETS")
 public class PetEntity {
     @Id
     private Long id;

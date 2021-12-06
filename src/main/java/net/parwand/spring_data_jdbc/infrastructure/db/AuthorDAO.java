@@ -1,8 +1,9 @@
 package net.parwand.spring_data_jdbc.infrastructure.db;
 
 import net.parwand.spring_data_jdbc.domain.model.author.Author;
+import net.parwand.spring_data_jdbc.infrastructure.dto.AuthorEntity;
 import org.springframework.data.repository.CrudRepository;
 
-public interface AuthorCrudRepository extends CrudRepository<Author, Long> {
-    Author findAuthorById(Long id);
+public interface AuthorDAO extends CrudRepository<AuthorEntity, Long> {
+    AuthorEntity findAuthorById(Long id);
 }

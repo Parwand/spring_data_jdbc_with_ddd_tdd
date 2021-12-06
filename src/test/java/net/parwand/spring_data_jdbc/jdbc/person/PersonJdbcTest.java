@@ -3,6 +3,8 @@ package net.parwand.spring_data_jdbc.jdbc.person;
 import net.parwand.spring_data_jdbc.domain.model.person.Address;
 import net.parwand.spring_data_jdbc.domain.model.person.Person;
 import net.parwand.spring_data_jdbc.infrastructure.db.PersonRepositoryImp;
+import net.parwand.spring_data_jdbc.infrastructure.dto.AddressEntity;
+import net.parwand.spring_data_jdbc.infrastructure.dto.PersonEntity;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,7 +26,8 @@ class PersonJdbcTest {
     @Sql("classpath:db/migration/V1__initial.sql")
     void test_1(){
         Address address = new Address("Uni 1", 40445, "DU");
-        Person person = Person.create("Lio", address);
+        Person person = Person.create(null, "Lio", address);
+
         personRepositoryImp.save(person);
         Person lio = personRepositoryImp.findPersonById(person.geId());
         assertThat(lio).isEqualTo(person);
@@ -34,7 +37,7 @@ class PersonJdbcTest {
     @DisplayName("Person can be saved without Address in database")
     @Sql("classpath:db/migration/V1__initial.sql")
     void test_2(){
-        Person person = Person.create("Lucas", null);
+        Person person = Person.create(null, "Lucas", null);
         personRepositoryImp.save(person);
         Person lucas = personRepositoryImp.findPersonById(person.geId());
         assertThat(lucas).isEqualTo(person);
@@ -45,7 +48,7 @@ class PersonJdbcTest {
     @Sql("classpath:db/migration/V1__initial.sql")
     void test_3(){
         Address address = new Address("King Street 5", 5423, "London");
-        Person person = Person.create("Max", address);
+        Person person = Person.create(null, "Max", address);
         personRepositoryImp.save(person);
         Person max = personRepositoryImp.findPersonById(person.geId());
         assertThat(max).isEqualTo(person);
